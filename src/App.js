@@ -33,14 +33,14 @@ class App extends Component {
           <Column title="Director" dataIndex="director_name" />
           <Column title="Actor 1" dataIndex="actor_1_name" />
           <Column title="Actor 2" dataIndex="actor_2_name" />
-          <Column title="Genre" dataIndex="genres" />
-          <Column title="Language" dataIndex="language" />
-          <Column title="Country" dataIndex="country" />
-          <Column title="Content Rating" dataIndex="content_rating" />
-          <Column title="Budget" dataIndex="budget" />
-          <Column title="Year" dataIndex="title_year" />
-          <Column title="Plot Keywords" dataIndex="plot_keywords" />
-          <Column title="IMDB Link" dataIndex="movie_imdb_link" />
+          <Column title="Genre" dataIndex="genres" render={text => <div>{text.split('|').join(', ')}</div>} />
+          <Column title="Language" dataIndex="language" width="5%" />
+          <Column title="Country" dataIndex="country" width="5%" />
+          <Column title="Content Rating" dataIndex="content_rating" width="5%" />
+          <Column title="Budget" dataIndex="budget" width="6%" />
+          <Column title="Year" dataIndex="title_year" width="4%"/>
+          <Column title="Plot Keywords" dataIndex="plot_keywords" render={text => <div>{text.split('|').join(', ')}</div>} width="15%" />
+          <Column title="IMDB Link" dataIndex="movie_imdb_link" render={(text) => <a href={text} target="_blank" >{text}</a>} width="18%" />
         </Table>
       </div>
     );
